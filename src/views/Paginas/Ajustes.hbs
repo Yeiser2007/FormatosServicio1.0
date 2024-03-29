@@ -1,0 +1,28 @@
+    <link rel="stylesheet" href="/css/Ajustes.css">
+       <title>Ajustes</title>
+    </head>
+<body>
+    {{> header}}
+
+
+    <div class="container col-lg-7">
+        <div class="col-sm-12">
+            <h1 class="title">DATOS DE USUARIO</h1>
+            <div class="row col-sm-12 contim">
+
+                <div class="col-sm-4 contim2">
+                    <img class="imagen"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2048px-User_icon_2.svg.png"
+                        alt="">
+                </div>
+                <div class="col-sm-8 contenido">
+                    <label for="" class="element">Nombre(s) : {{user.nombres}}</label> <br>
+                    <label for="" class="element">Apellido Paterno : {{user.primerApellido}}</label> <br>
+                    <label for="" class="element">Apellido Materno : {{user.segundoApellido}}</label> <br>
+                    <label for="" class="element">Correo : {{user.username}}</label> <br>
+                    <label for="" class="element">Fecha Nacimiento : {{user.fechaNac}}</label> <br>
+                </div>
+            </div>
+            <a href="/Formatos/Usuario/ModificarUsuario" class="linkA">editar contraseña</a>
+        </div>
+    </div>

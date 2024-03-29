@@ -1,0 +1,47 @@
+
+body{
+    background-image: url(https://th.bing.com/th/id/R.906c9f68d18dc8147ce26692c4d7f557?rik=SDxTmkqYJ%2fhAEw&pid=ImgRaw&r=0);
+    backdrop-filter: blur(10px);
+}
+
+
+.contenedorLog{
+
+    margin: 2rem auto;
+    padding: 2rem 4rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 25px #222;
+}
+.imglogov{
+    width: 15rem;
+    height: 7rem;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+}
+
+.titlel{
+    margin: 1rem auto;
+}
+
+.form-control{
+    margin: 2rem auto;
+}
+
+.btn{
+    width: 10rem;
+    height: 3rem;
+    margin: 2rem auto;
+
+}
+
+.container1{
+    padding: 0;
+    margin: 0;
+}
+.container22{
+    padding: 0;
+    margin: 0px;
+}

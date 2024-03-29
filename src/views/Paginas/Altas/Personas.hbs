@@ -1,0 +1,202 @@
+      <link rel="stylesheet" href="/css/FormAstyle.css">
+      <title>Altas</title>
+      </head>
+<body>
+    {{> header}}
+
+<div class="container col-lg-8 col-sm-12">
+    <form class="row g-3 needs-validation" action="/Modificaciones/Guardar" method="post">
+      <h1 class="title"> Datos Personales <span class="badge bg-secondary"></span></h1>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Tipo de Usuario</label>
+        <select class="form-select" id="tipoUsuario" name="usuario" required>
+          <option selected disabled value="">Elige una opcion...</option>
+          <option value="Alumno">Alumno</option>
+          <option value="Profesor">Profesor</option>
+          <option value="Coordinador">Coordinador</option>
+          <option value="CoordProf">Coordinador y Profesor</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label"> Nombre(s)</label>
+        <input type="text" class="form-control" id="validationCustom01" name="nombre" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Primer Apellido</label>
+        <input type="text" class="form-control" id="validationCustom02" name="pApellido" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Segundo Apellido</label>
+        <input type="text" class="form-control" id="validationCustom02" name="sApellido" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom05" class="form-label">Fecha Nacimiento</label>
+        <input type="date" class="form-control" id="validationCustom05" name="fechaNac" required>
+        <div class="invalid-feedback">
+          Please provide a valid zip.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Genero</label>
+        <select class="form-select" id="validationCustom04" required name="genero">
+          <option selected disabled value="">Elige una opcion...</option>
+          <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Estado civil</label>
+        <select class="form-select" id="validationCustom04" required name="edoCivil">
+          <option selected disabled value="">Elige una opcion...</option>
+          <option value="soltero">Soltero</option>
+          <option value="casado">Casado</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom02" class="form-label">Nacionalidad</label>
+        <input type="text" class="form-control" id="validationCustom02" name="nacionalidad" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">RFC</label>
+        <input type="text" class="form-control" id="validationCustom02" name="rfc" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-5">
+        <label for="exampleInputEmail1" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Pais</label>
+        <select class="form-select" id="validationCustom04" required name="pais">
+          <option selected disabled value="">Elige una opcion...</option>
+          <option value="pais">...</option>
+          <option value="1">Mexico</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Estado</label>
+        <select class="form-select" id="validationCustom04" required name="estado">
+          <option selected disabled value="">Elige una opcion...</option>
+          <option value="1">Mexico</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Municipio</label>
+        <select class="form-select" id="Municipio" required name="Municipio">
+          <option selected disabled value="">Elige una opcion...</option>
+          <option value="1">Toluca</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom05" class="form-label">Colonia</label>
+        <input type="text" class="form-control" id="validationCustom05" name="colonia" required>
+        <div class="invalid-feedback">
+          Please provide a valid zip.
+        </div>
+      </div>
+      
+      <div class="col-md-5">
+        <label for="validationCustom02" class="form-label">No. interior</label>
+        <input type="text" class="form-control" id="validationCustom02" name="noInterior" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-5">
+        <label for="validationCustom02" class="form-label">No. Exterior</label>
+        <input type="text" class="form-control" id="validationCustom02" name="noExterior" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-5">
+        <label for="validationCustom05" class="form-label">Calle</label>
+        <input type="text" class="form-control" id="validationCustom05" name="calle" required>
+        <div class="invalid-feedback">
+          Please provide a valid zip.
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">C.P</label>
+        <input type="text" class="form-control" id="validationCustom05" name="cp" required>
+        <div class="invalid-feedback">
+          Please provide a valid zip.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom05" class="form-label">CURP</label>
+        <input type="text" class="form-control" id="validationCustom05" name="curp" required>
+        <div class="invalid-feedback">
+          Please provide a valid zip.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom05" class="form-label">Numero Personal</label>
+        <input type="number" class="form-control" id="validationCustom05" name="telcel" required>
+        <div class="invalid-feedback">
+          Please provide a valid zip.
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="validationCustom05" class="form-label">Numero Casa</label>
+        <input type="number" class="form-control" id="validationCustom05" name="tel" required>
+        <div class="invalid-feedback">
+          Please provide a valid zip.
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+          <label class="form-check-label" for="invalidCheck">
+            Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
+      <div class="btns col-12">
+        <input type="submit" name="accion" value="Guardar" class="btn btn-outline-danger">
+      </div>
+
+    </form>
+  </div>

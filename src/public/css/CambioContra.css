@@ -1,0 +1,33 @@
+
+.cambio{
+    box-shadow: 0px 0px 20px 1px ;
+    margin: 4rem auto;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem;
+    background-color: #ffffff;
+}
+.btn{
+    margin: 2rem auto;
+    width: 8rem;
+    height: 3rem;
+}
+.cont{
+    padding: 0%;
+}
+.see{
+    height: 2rem;
+    width: 2.5rem;
+    position: static;
+    margin-top: 2.2rem;
+    margin-left:0px ;
+    opacity: .3;
+}
+.see:hover{
+    opacity: .9;
+    cursor: pointer;
+}
+
+.container1{
+    background-color: rgb(red, 255, 255,.5);
+}

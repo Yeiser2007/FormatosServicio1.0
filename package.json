@@ -1,0 +1,31 @@
+{
+  "name": "formatosweb",
+  "version": "1.0.0",
+  "description": "Pagina web en la que implemetaremos una base de datos para el autollenado de formatos que seran utilizados en la pagina de vianco.uaemex.mx",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "express-mysql-session": "^3.0.0",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "local": "^0.3.3",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql-client": "^0.3.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "timeago.js": "^4.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

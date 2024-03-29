@@ -1,0 +1,132 @@
+<link rel="stylesheet" href="/Formatos/css/CambioContra.css">
+</head>
+
+<body>
+    {{> header}}
+
+{{#if valid.verdad}}
+    <div class="container1 p-4">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Actualizada correctamente
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+
+{{#if valid.falso}}
+    <div class="container1  p-4">
+        <div class="row">
+            <div class="col-md-4 bg-red mx-auto">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Algun dato incorrecto por favor verifica y vuelve a intentar
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+
+
+    <form action="/Formatos/Usuario/ModificarUsuario" method="post" class="row cambio col-xl-6">
+        <h2>Usuario y Contraseña</h2>
+        <div class=" cont col-md-12 col-lg-12 col-sm-12 col-xl-12">
+            <label for="validationServer01" class="form-label">Usuario</label>
+            <input type="text" class="form-control " id="usuario" name="usuario" value="{{user.username}}" readonly>
+            <div class="" id="text1">
+            </div>
+        </div>
+        <div class=" cont col-md-11 col-lg-11 col-sm-11 col-xl-11">
+            <label for="validationServer01" class="form-label">Contraseña Actual</label>
+            <input type="password" class="form-control " id="ContraseñaActual" name="ContraseñaActual" required>
+            <div class="" id="text">
+            </div>
+        </div>
+        <img src="/Formatos/imagines/ojo.png" alt="" class="see  col-md-1" name="wf" onclick="mostrar()">
+
+        <div class=" cont col-md-11 col-lg-11 col-sm-11 col-xl-11">
+            <label for="validationServer01" class="form-label">Contraseña</label>
+            <input type="password" class="form-control " id="Contraseña" name="Contraseña" required>
+            <div class="" id="text1">
+            </div>
+        </div>
+        <img src="/Formatos/imagines/ojo.png" alt="" class="see  col-md-1" name="wf" onclick="mostrar1()">
+
+        <div class=" cont col-md-11 col-lg-11 col-sm-11 col-xl-11">
+            <label for="validationServer02" class="form-label">Confirmar Contrseña</label>
+            <input type="password" class="form-control" id="ConfirmarC" name="ConfirmarC" required>
+            <div class="" id="text2"></div>
+        </div>
+        <img src="/Formatos/imagines/ojo.png" alt="" class="see  col-md-1" name="wf" onclick="mostrar2()">
+        <button type="submit" id="btn" class="btn btn-outline-success">Actualizar</button>
+    </form>
+
+    <script>
+        var contra = document.getElementById('Contraseña');
+        var contraseñaC = document.getElementById('ConfirmarC');
+        var contraseñaActual = document.getElementById('ContraseñaActual');
+        var boton = document.getElementById('btn');
+        contraseñaC.addEventListener('change', validar);
+
+        function mostrar() {
+            if (contraseñaActual.type == 'password') {
+                contraseñaActual.type = 'text'
+            } else {
+                contraseñaActual.type = 'password';
+            }
+        }
+
+        function mostrar1() {
+            contraseñaC.type = 'password'
+            if (contra.type == 'password') {
+                contra.type = 'text'
+            } else {
+                contra.type = 'password';
+            }
+        }
+
+        function mostrar2() {
+            contra.type = 'password'
+            if (contraseñaC.type == 'password') {
+                contraseñaC.type = 'text'
+            } else {
+                contraseñaC.type = 'password';
+            }
+        }
+
+
+        function validar() {
+            var inputText1 = document.getElementById('text1');
+            var inputText2 = document.getElementById('text2');
+
+            if (contra.value == contraseñaC.value) {
+                if (contra.classList.contains('is-invalid')) {
+                    contraseñaC.classList.remove('is-invalid')
+                    contra.classList.remove('is-invalid')
+                    inputText1.classList.remove('invalid-feedback');
+                    inputText2.classList.remove('invalid-feedback')
+                }
+                contra.classList.toggle('is-valid');
+                contraseñaC.classList.toggle('is-valid');
+                inputText1.classList.add('valid-feedback');
+                inputText2.classList.add('valid-feedback')
+                inputText2.innerText = 'Contraseñas validadas';
+
+            } else {
+                if (contra.classList.contains('is-valid')) {
+                    contraseñaC.classList.remove('is-valid')
+                    contra.classList.remove('is-valid')
+                    contra.classList.remove('is-valid');
+                    contraseñaC.classList.remove('is-valid');
+                }
+                contra.classList.toggle('is-invalid');
+                contraseñaC.classList.toggle('is-invalid');
+                inputText1.classList.add('invalid-feedback');
+                inputText2.classList.add('invalid-feedback')
+                inputText2.innerText = 'Contraseñas invalidadas';
+            }
+        }
+    </script>

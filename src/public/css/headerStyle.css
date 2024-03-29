@@ -1,0 +1,83 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    font-size: 16px;
+    margin: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.head{
+    background-color:#01010a;
+    height: 3rem;
+    width: 100%;
+    box-shadow: #01010a 2px 2px 5px;
+    position: relative;
+}
+.container-fluid{
+    padding: 0px;
+}
+.navbar{
+    padding: 0;
+    height: 3rem;
+}
+.logoPrincipal{
+    width: 15rem;
+    height: 4rem;
+    margin: 0px 50px;
+    
+}
+.collapse{
+    margin-left: 5rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.logoPrincipal{
+    width: 10rem;
+    height: 3rem;
+    margin: 0px 50px;
+    
+}
+.dropdown-menu{
+    background-color: #081269;
+    padding: 0px;
+
+}
+
+.font-weight-bold{
+    text-align: center;
+}
+
+.dropdown-item {
+    text-align: center;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    display: block;
+}
+.footer{
+    background-color: #01010a;
+}
+.navbar-custom .navbar-brand, .navbar-custom .navbar-text {
+    color: #FFFFFF;
+    margin: 0px 20px;
+}
+
+.nav-link, .dropdown-item{
+    color: #FFFFFF;
+    font-family: 'Merriweather Sans', sans-serif;
+    margin: 0px 3px;
+    font-size: 12px;
+    display: block;
+}
+.nav-link:hover, .dropdown-item:hover{
+    background-color: #E37222;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.nav-link:focus{
+    color:  #FFFFFF;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}

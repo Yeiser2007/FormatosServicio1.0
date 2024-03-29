@@ -1,0 +1,670 @@
+ <link rel="stylesheet" href="/css/Doc3evStyle.css">
+<title>2° Evaluacion</title>
+</head>
+
+<body>
+  {{> header}}
+ <div class="container col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
+        <div class="row">
+            <div class="col-lg-1 col-xl-1 col-md-1 col-sm-1"></div>
+            <div class="contenedor col-lg-10 col-xl-10 col-md-10 col-sm-12">
+                <div class="row">
+                    <span class="col-lg-2 col-sm-2">
+                        <img class="logo"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Logo_de_la_UAEMex.svg/800px-Logo_de_la_UAEMex.svg.png"
+                            alt="">
+                    </span>
+                    <span class="col-lg-8 col-sm-8">
+                        <h1 class="center">
+                            DOCTORADO EN CIENCIAS DE LA INGENIERIA <br>
+                            FACULTAD DE INGENIERIA
+                        </h1>
+                    </span>
+                    <span class="col-lg-2 col-sm-2">
+                        <img class="logo"
+                            src="https://th.bing.com/th/id/R.09aa38a01276130c39598d6025fabaab?rik=7mvbDZ35lh9HGw&pid=ImgRaw&r=0"
+                            alt="">
+                    </span>
+
+                </div>
+
+                <p class="center">
+                    Formato de evaluación <br>
+                    <b>Actividades de investigación: </b>
+                    5do. Semestre
+                </p>
+                {{links}}
+                {{nombres}}
+                <div class="col-md-10 col-sm-10">
+                    <label for="validationDefault01" class="form-label">Nombre del evaluador </label>
+                    <input type="text" name="NombreEvaluador" id="NombreEvaluador" class="form-control"
+                        id="validationDefault01"
+                        value="{{user.nombres}} {{user.primerApellido}} {{user.segundoApellido}}" required>
+                </div>
+                <div class="col-md-11 col-sm-11">
+                    <label for="validationDefault02" class="form-label">ASIGNACIÓN DENTRO DEL <b> COMITÉ TUTORAL:
+                        </b>
+                        DIRECTOR DE TESIS (<input type="text" name="dt" id="dt" class="yn">) CODIRECTOR DE TESIS (<input
+                            type="text" class="yn" name="ct" id="ct">) TUTORES (<input id="tuto" name="tuto" type="text" class="yn">)
+                    </label>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <label for="validationDefault04" class="form-label">Nombre del alumno</label>
+                    <select class="form-select" id="nombreAlumno" required>
+                        <option selected disabled value="">selecciona una opcion...</option>
+                        {{#each lal}} 
+                        <option value="{{id_persona}}">{{nombres}} {{primerApellido}} {{segundoApellido}}</option>
+                        {{/each }}
+                    </select>
+                </div>
+                <div class="col-md-10">
+                    <label for="validationDefault04" class="form-label">Titulo del proyecto</label>
+                   <select class="form-select" id="proyecto" disabled>
+                        <option selected disabled value="">selecciona una opcion...</option>
+                        {{#each tesis}} 
+                        <option value="{{id_persona}}">{{nombre}}</option>
+                        {{/each }}
+                    </select>   
+                     </div>
+
+                <p> <b> I. Trabajo Escrito (70%). </b> Se califica forma, fondo e integración de los primeros
+                    capítulos y su
+                    capítulo de avance, del trabajo escrito de tesis.</p>
+                <div class="row">
+                    <div class="col-lg-1 col-xl-1 col-md-1 col-sm-1"></div>
+                    <div class="col-lg-10 col-xl-10 col-md-10 col-sm-10">
+                        <table class="table table-bordered border-3 border-dark ">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="center"><b>Puntos a Evaluar</b></th>
+                                    <th scope="col" class="center">Calificacion (1-10)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">Introducción (parte del protocolo) capítulo I</td>
+                                    <td><input type="number" id="cal1" class="cal"></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Estado del Arte – capítulo II</td>
+                                    <td><input type="number" id="cal2" class="cal"></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Marco Teórico – capítulo III</td>
+                                    <td colspan="2"><input type="number" id="cal3" class="cal"></td>
+                                </tr>
+
+                                <tr>
+                                    <td scope="row">Tabla comparativa entre el Plan de Trabajo semestral y las
+                                        actividades
+                                        realizadas (Reporte de Trabajo semestral)</td>
+                                    <td colspan="2"><input type="number" id="cal4" class="cal"></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div class="col-lg-1 col-xl-1 col-md-1 col-sm-1"></div>
+                </div>
+                <p> <b> II. Presentación Oral (30%).</b> Se califica la presentación y el dominio de lo presentado.
+                    <!-- tabla dos -->
+                <div class="row">
+                    <div class="col-lg-1 col-xl-1 col-md-1 col-sm-1"></div>
+                    <div class="col-lg-10 col-xl-10 col-md-10 col-sm-10">
+                        <table class="table table-bordered border-3 border-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="center"><b>Puntos a Evaluar</b></th>
+                                    <th scope="col" class="center">Calificacion (1-10)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">Introducción </td>
+                                    <td><input type="number" class="cal" id="cal5"></td>
+                                </tr>
+
+                                <tr>
+                                    <td scope="row">Estado del Arte</td>
+                                    <td colspan="2"><input type="number" class="cal" id="cal6"></td>
+                                </tr>
+
+                                <tr>
+                                    <td scope="row">Marco teórico</td>
+                                    <td colspan="2"><input type="number" class="cal" id="cal7"></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Avances: propuestas y resultados
+                                    </td>
+                                    <td><input type="number" class="cal" id="cal8"></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Comparativo entre cronograma inicial
+
+                                        y actividades realizadas
+
+                                    </td>
+                                    <td><input type="number" class="cal" id="cal9"></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div class="col-lg-1 col-xl-1 col-md-1 col-sm-1"></div>
+                </div>
+                <p>El alumno deberá tener un avance entre el 25% y el 35% de su investigación.</p>
+
+                <p><b>CALIFICACION ASIGNADA (ESCALA DE 0 A 10):</b> <input type="number" id="calFinal" class="calFinal" > </p>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                        style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Comentarios y observaciones</label>
+                </div>
+                <div class="div-btn col-12">
+                    <button class="btn btn-primary" onclick="generarPDF()">Imprimir</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+  <script>
+    const alumnos = document.getElementById('nombreAlumno');
+    alumnos.addEventListener('change',cambiar);
+    const proyecto = document.getElementById('proyecto');
+
+    var selec1
+    const calf = document.getElementById('cal9');
+    calf.addEventListener('change',calcular);
+
+
+    function cambiar(){
+      for (var i =0; i<proyecto.options.length;i++){ 
+        if(proyecto.options[i].value === alumnos.value){
+          proyecto.selectedIndex =i;
+        }
+            }
+    }
+
+    function calcular(){
+                  const myInput5 = document.getElementById("cal1");
+      const calf1 = myInput5.value;
+      console.log(calf1)
+      const myInput6 = document.getElementById("cal2");
+      const calf2 = myInput6.value;
+      console.log(calf2)
+      const myInput7 = document.getElementById("cal3");
+      const calf3 = myInput7.value;
+      console.log(calf3)
+      const myInput8 = document.getElementById("cal4");
+      const calf4 = myInput8.value;
+      console.log(calf4)
+      const myInput9 = document.getElementById("cal5");
+      const calf5 = myInput9.value;
+      console.log(calf5)
+      const myInput10 = document.getElementById("cal6");
+      const calf6 = myInput10.value;
+      console.log(calf6)
+      const myInput11 = document.getElementById("cal7");
+      const calf7 = myInput11.value;
+      console.log(calf7)
+      const myInput12 = document.getElementById("cal8");
+      const calf8 = myInput12.value;
+      console.log(calf8)
+      const myInput13 = document.getElementById("cal9");
+       const calF = document.getElementById("calFinal");
+      const calf9 = myInput13.value;
+      var num1 = parseFloat(calf1);
+      var num2 = parseFloat(calf2);
+      var num3 = parseFloat(calf3);
+      var num4 = parseFloat(calf4);
+      var num5 = parseFloat(calf5);
+      var num6 = parseFloat(calf6);
+      var num7 = parseFloat(calf7);
+      var num8 = parseFloat(calf8);
+      var num9 = parseFloat(calf9);
+
+      const summa = num1 + num2 + num3 + num4;
+      const total1 = (summa * 7) / 40;
+
+      const summa2 = num5 + num6 + num7 + num8 + num9;
+      const total2 = (summa2 * 3) / 50;
+
+      const calfinal = (total1 + total2).toFixed(1);
+        calF.value = calfinal;
+    }
+    
+    function generarPDF() {
+      const myInput = document.getElementById("NombreEvaluador");
+      const nombre = myInput.value;
+      console.log(nombre);
+
+      const myInput2 = document.getElementById("dt");
+      const asignacion = myInput2.value;
+      console.log(asignacion)
+
+      const ct = document.getElementById("ct");
+      const coot = ct.value;
+
+      const tut = document.getElementById("tuto");
+      const tutor=tut.value
+
+      const myInput3 = document.getElementById("nombreAlumno");
+      const al = myInput3.options[myInput3.selectedIndex];
+      const alumno = al.textContent;
+      console.log(alumno)
+      const myInput4 = document.getElementById("proyecto");
+      const proy = myInput4.options[myInput4.selectedIndex];
+      const proyecto = proy.textContent;
+      console.log(proyecto)
+      const myInput5 = document.getElementById("cal1");
+      const calf1 = myInput5.value;
+      console.log(calf1)
+      const myInput6 = document.getElementById("cal2");
+      const calf2 = myInput6.value;
+      console.log(calf2)
+      const myInput7 = document.getElementById("cal3");
+      const calf3 = myInput7.value;
+      console.log(calf3)
+      const myInput8 = document.getElementById("cal4");
+      const calf4 = myInput8.value;
+      console.log(calf4)
+      const myInput9 = document.getElementById("cal5");
+      const calf5 = myInput9.value;
+      console.log(calf5)
+      const myInput10 = document.getElementById("cal6");
+      const calf6 = myInput10.value;
+      console.log(calf6)
+      const myInput11 = document.getElementById("cal7");
+      const calf7 = myInput11.value;
+      console.log(calf7)
+      const myInput12 = document.getElementById("cal8");
+      const calf8 = myInput12.value;
+      console.log(calf8)
+      const myInput13 = document.getElementById("cal9");
+      const calf9 = myInput13.value;
+      console.log(calf9)
+      var num1 = parseFloat(calf1);
+      var num2 = parseFloat(calf2);
+      var num3 = parseFloat(calf3);
+      var num4 = parseFloat(calf4);
+
+      var num5 = parseFloat(calf5);
+      var num6 = parseFloat(calf6);
+      var num7 = parseFloat(calf7);
+      var num8 = parseFloat(calf8);
+      var num9 = parseFloat(calf9);
+
+      const summa = num1 + num2 + num3 + num4;
+      const total1 = (summa * 7) / 40;
+
+      const summa2 = num5 + num6 + num7 + num8 + num9;
+      const total2 = (summa2 * 3) / 50;
+
+      const calfinal = (total1 + total2).toFixed(1);
+
+      //console.log(summa);
+      //console.log(summa2);
+
+      const myInput14 = document.getElementById("floatingTextarea2");
+      const observaciones = myInput14.value;
+      console.log(observaciones)
+
+      //Obtener el dia 
+      const today = new Date();
+      const day = today.getDate();
+
+      //Obtener el mes 
+      const months = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+      const month = months[today.getMonth()];
+
+      //Obtener el año
+      const year = today.getFullYear();
+
+
+
+
+      //Agregar Encabezado
+
+      // Obtener las imágenes en formato base64
+      var imageUrl1 = '/imagines/logofac.png';
+      var imageUrl2 = '/imagines/UAEM.png';
+
+      var promesaImagen1 = obtenerImagenBase64(imageUrl1);
+      var promesaImagen2 = obtenerImagenBase64(imageUrl2);
+
+      Promise.all([promesaImagen1, promesaImagen2])
+        .then(function (resultados) {
+          var base64data1 = resultados[0];
+          var base64data2 = resultados[1];
+
+
+          //Agregar Encabezado
+          var header = {
+            columns: [
+              {
+                image: base64data2,
+                width: 50,
+                margin: [0, 10, 0, 0]
+
+              },
+              // Texto dividido en dos renglones
+              {
+                text: ['DOCTORADO EN CIENCIAS DE LA INGENIERÍA\n', 'FACULTAD DE INGENIERÍA'],
+                alignment: 'center', fontSize: 9, margin: [0, 10, 0, 10]
+              }, //0,10,0,10
+              {
+                image: base64data1,
+                width: 55,
+                margin: [0, 10, 0, 0]
+              }
+            ],
+            margin: [70, 15, 90, 15]
+          };
+
+
+
+          // Definición del documento
+          var docDefinition = {
+
+            pageSize: 'LETTER',
+            pageMargins: [70, 50, 70, 30], // márgenes en pulgadas
+            header: header,
+            content: [
+
+              // Título
+              {
+                text: 'FACULTAD DE INGENIERÍA', style: 'title', alignment: 'center',
+                fontSize: 12,
+                margin: [5, 5, 5, 5]
+              },
+
+              //Segundo Semestre
+              {
+                columns: [
+                  {
+                    text: [
+                      { text: 'Actividades de investigación: ', alignment: 'center', bold: true, fontSize: 12 },
+                      { text: '2° Semestre', alignment: 'center', fontSize: 12 }
+                    ],
+                    margin: [0, 0, 5, 10]
+                  }
+                ]
+              },
+
+              //Nombre del Evaluador
+              {
+                columns: [
+                  {
+
+                    text: [
+
+                      { text: 'NOMBRE DEL EVALUADOR: ', alignment: 'left', bold: true, fontSize: 11 },
+
+                      { text: nombre + '\n', alignment: 'left', fontSize: 11 }
+                    ],
+                    margin: [0, 0, 5, 5]
+                  }
+                ]
+              },
+
+              //Asignación dentro del comite tutoral
+              {
+                columns: [
+                  {
+                    text: [
+                      { text: 'ASIGNACIÓN DENTRO DEL ', alignment: 'left', fontSize: 11 },
+                      { text: 'COMITÉ TUTORAL: DIRECTOR DE TESIS:(', alignment: 'left', bold: false, fontSize: 11 },
+                      { text: asignacion, alignment: 'left', fontSize: 11 },
+                      { text: ') COODIRECTOR DE TESIS:(', alignment: 'left', bold:false, fontSize: 11 },
+                      { text: coot, alignment: 'left', bold:false, fontSize: 11 },
+                        { text: ') TUTORES :(', alignment: 'left', bold:false, fontSize: 11 },
+                      { text: tutor, alignment: 'left', bold:false, fontSize: 11 },
+                        { text: ')', alignment: 'left', bold:false, fontSize: 11 },
+                      
+                      
+                    ],
+                    margin: [0, 0, 5, 5]
+                  }
+                ]
+              },
+
+              //Nombre del Alumno
+              {
+                columns: [
+                  {
+                    text: [
+                      { text: 'NOMBRE DEL ALUMNO: ', alignment: 'left', fontSize: 11 },
+                      { text: alumno, alignment: 'left', fontSize: 11 }
+                    ],
+                    margin: [0, 0, 5, 5]
+                  }
+                ]
+              },
+
+              //TÍTULO DEL PROYECTO:
+              {
+                columns: [
+                  {
+                    text: [
+                      { text: 'TÍTULO DEL PROYECTO: ', alignment: 'left', fontSize: 11 },
+                      { text: proyecto, alignment: 'left', fontSize: 11 }
+                    ],
+                    margin: [0, 0, 10, 10]
+                  }
+                ]
+              },
+
+              //I. Trabajo Escrito (70%).
+              {
+                columns: [
+                  {
+                    text: [
+                      { text: 'I. Trabajo Escrito (70%). ', alignment: 'left', bold: true, fontSize: 11 },
+                      { text: 'Se califica forma, fondo e integración de los primeros capítulos y su capítulo de avance, del trabajo escrito de tesis.', alignment: 'left', fontSize: 11 }
+                    ],
+                    margin: [0, 0, 0, 0]
+                  }
+                ]
+              },
+
+              // Primer Tabla 
+              {
+                style: 'table',
+
+                table: {
+                  headerRows: 1,
+                  alignment: 'center',
+                  widths: [290, 90],
+
+                  body: [
+                    // Encabezados de tabla
+                    [
+                      { text: 'Puntos a Evaluar', style: 'tableHeader', fontSize: 11 },
+                      { text: 'Calificación(1-10)', style: 'tableHeader', fontSize: 11 }
+                    ],
+                    // Datos de tabla
+                    [
+                      { text: 'Introducción (parte del protocolo)', fontSize: 11 },
+                      { text: calf1, alignment: 'center', fontSize: 11 }
+
+                    ],
+                    [
+                      { text: 'Estado del Arte', fontSize: 11 },
+                      { text: calf2, alignment: 'center', fontSize: 11 }
+                    ]
+                    ,
+                    [
+                      { text: 'Marco Teórico', fontSize: 11 },
+                      { text: calf3, alignment: 'center', fontSize: 11 }
+                    ],
+                    [
+                      {
+                        text: 'Tabla comparativa entre el Plan de Trabajo ' +
+                          'semestral y las actividades realizadas (Reporte de Trabajo semestral)', fontSize: 11
+                      },
+                      { text: calf4, alignment: 'center', fontSize: 11 }
+                    ]
+
+                  ]
+                }
+              },
+
+              //II. Presentación Oral (30%). 
+              {
+                columns: [
+                  {
+                    text: [
+                      { text: 'II. Presentación Oral (30%). ', alignment: 'left', bold: true, fontSize: 11 },
+                      { text: 'Se califica la presentación y el dominio de lo presentado.', alignment: 'left', fontSize: 11 }
+                    ],
+                    margin: [0, 0, 0, 0]
+                  }
+                ]
+              },
+
+              // Segunda Tabla 
+              {
+                style: 'table',
+                table: {
+                  headerRows: 1,
+                  widths: [200, 90],
+                  body: [
+                    // Encabezados de tabla
+                    [
+                      { text: 'Puntos a Evaluar', style: 'tableHeader', fontSize: 11 },
+                      { text: 'Calificación(1-10)', style: 'tableHeader', fontSize: 11 }
+                    ],
+                    // Datos de tabla
+                    [
+                      { text: 'Introducción', fontSize: 11 },
+                      { text: calf5, alignment: 'center', fontSize: 11 }
+
+                    ],
+                    [
+                      { text: 'Estado del Arte', fontSize: 11 },
+                      { text: calf6, alignment: 'center', fontSize: 11 }
+                    ]
+                    ,
+                    [
+                      { text: 'Marco Teórico', fontSize: 11 },
+                      { text: calf7, alignment: 'center', fontSize: 11 }
+                    ],
+                    [
+                      { text: 'Avances: propuestas y resultados', fontSize: 11 },
+                      { text: calf8, alignment: 'center', fontSize: 11 }
+                    ],
+
+                    [
+                      {
+                        text: 'Comparativo entre cronograma inicial  ' +
+                          'y actividades realizadas', fontSize: 11
+                      },
+                      { text: calf9, alignment: 'center', fontSize: 11 }
+                    ]
+
+                  ]
+                }
+              },
+
+              //El alumno deberá tener un avance entre el 25% y el 35% de su investigación.
+
+              {
+                columns: [
+                  {
+                    text: [
+                      { text: 'El alumno deberá tener un avance entre el 25% y el 35% de su investigación.\n\n', alignment: 'left', fontSize: 11 },
+                      { text: 'CALIFICACION ASIGNADA (ESCALA DE 0 A 10): ', alignment: 'left', bold: true, fontSize: 11 },
+                      { text: calfinal + '\n\n', alignment: 'left', fontSize: 11 },
+                      // {text: calfinal, alignment: 'left',fontSize:11,margin: [0, 0, 0, 0] },
+                      // { text: '_____________\n\n', alignment: 'center',margin: [0, 10, 10, 0] },
+                      { text: 'Comentarios y Observaciones:', alignment: 'left', bold: true, fontSize: 11 }
+
+                    ],
+                    margin: [0, 0, 10, 0]
+                  }
+                ]
+              },
+
+              //Ultimo Cuadro 
+              {
+                style: 'table',
+                table: {
+                  headerRows: 1,
+                  widths: [400],
+                  body: [
+                    [
+                      { text: observaciones, fontSize: 11 }
+                    ]
+
+                  ]
+                }
+              },
+
+              //Imprimir la Fecha
+
+              {
+                columns: [
+                  {
+                    text: [
+                      //{ text: '\n\n' },
+                      { text: 'Toluca, México a ', alignment: 'center' },
+                      { text: day, alignment: 'center' },
+                      { text: ' de ', alignment: 'center' },
+                      { text: month, alignment: 'center' },
+                      { text: ' de ', alignment: 'center' },
+                      { text: year, alignment: 'center' }
+                    ],
+                    margin: [0, 0, 10, 0]
+                  }
+                ]
+              },
+              // Espacio para firma
+              { text: '\n\n' },
+              { text: '__________________________', alignment: 'center' },
+              { text: 'Firma', alignment: 'center', margin: [0, 10, 0, 0] }
+            ],
+
+            // Estilos
+            styles: {
+              header: { fontSize: 18, bold: true, margin: [0, 0, 0, 10] }, //cambie el ultimo cero, tenia 10
+              title: { fontSize: 16, bold: true },
+              table: { margin: [35, 12, 70, 12] },
+              tableHeader: { bold: true, fillColor: '#EEEEEE' }
+            }
+          };
+
+          // Crear PDF
+          pdfMake.createPdf(docDefinition).open();
+          alert("El documento ha sido generado con exito");
+        }
+        )
+    };
+  
+    function obtenerImagenBase64(url) {
+      return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = 'blob';
+
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            var reader = new FileReader();
+            reader.onloadend = function () {
+              resolve(reader.result);
+            };
+            reader.readAsDataURL(xhr.response);
+          } else {
+            reject(new Error('Error al obtener la imagen'));
+          }
+        };
+
+        xhr.onerror = function () {
+          reject(new Error('Error al obtener la imagen'));
+        };
+
+        xhr.send();
+      });
+    }
+  
+  </script>
